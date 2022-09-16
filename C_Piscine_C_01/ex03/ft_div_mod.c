@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 14:35:52 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/16 14:49:44 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/09/16 21:00:31 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	*div = a/b;
-	*mod = a%b;
+	*div = a / b;
+	*mod = a % b;
 }
 
 int	main(void)
