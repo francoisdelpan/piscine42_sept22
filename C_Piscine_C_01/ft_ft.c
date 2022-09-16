@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_ft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 12:00:40 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/16 09:46:09 by fpannier         ###   ########.fr       */
+/*   Created: 2022/09/16 11:24:48 by fpannier          #+#    #+#             */
+/*   Updated: 2022/09/16 11:52:43 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_is_negative(int n)
+void	ft_ft(int *nbr)
 {
-	if (n >= 0)
-	{
-		write(1, "P\n", 2);
-	}
-	else
-	{
-		write(1, "N\n", 2);
-	}
+	*nbr = 42;
 }
 
 int	main(void)
 {
-	ft_is_negative(1);
-	ft_is_negative(150);
-	ft_is_negative(-1);
-	ft_is_negative(0);
+	int	quarante_deux;
+
+	quarante_deux = 45;
+	ft_ft(&quarante_deux);
 	return (0);
 }
