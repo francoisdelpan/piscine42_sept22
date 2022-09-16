@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 09:04:37 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/15 11:00:14 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/09/15 19:16:18 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	super_write(char d1, char d2, char d3)
 	write(1, &d3, 1);
 	if (!(d1 == '7' && d2 == '8' && d3 == '9'))
 	{
-		write(1, ",", 1);
+		write(1, ", ", 2);
 	}
 }
 
@@ -38,7 +38,7 @@ void	ft_print_comb(void)
 		{
 			while (c3 <= '9')
 			{
-				if (c1 != c2 && c1 != c3 && c2 != c3)
+				if (c1 != c2 && c1 != c3 && c2 != c3 && c1 < c2 && c2 < c3)
 				{
 					super_write(c1, c2, c3);
 				}
