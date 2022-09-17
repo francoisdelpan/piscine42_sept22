@@ -6,15 +6,16 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 13:51:29 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/17 13:52:24 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/09/17 14:57:35 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "rush02.h"
+
+void	rush02(int row, int line);
 
 int	main(void)
 {
-	rush02(5, 3);
+	rush02(4, 4);
 	return (0);
 }
