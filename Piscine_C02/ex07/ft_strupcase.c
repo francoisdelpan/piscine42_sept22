@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 10:23:10 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/20 10:29:45 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/09/20 16:43:20 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,31 @@
 
 char	*ft_strupcase(char *str)
 {
+	char	temp;
 	while (*str != '\0')
 	{
-		if (*str >= 97 || *str <= 122)
+		printf("%s\n", str);
+		if (*str >= 97 && *str <= 122)
 		{
-			*str = *str - 32;
+			printf("test\n");
+			temp = *str - 32;
+			*str = temp;
+			printf( "%c\n",temp);
+			printf( "%s\n", str);
 		}
 		str++;
 	}
-	return str	
+	return (str);
 }
 
 int	main(void)
 {
 	char	*result;
 
-	result = fr_strupcase(char *str);
+	result = "sfdlkjsbhfdjkljfsldkjHHHHfdk84";
+	result = ft_strupcase(result);
+
+	printf("%c\n", *result);
 	printf("%s\n", result);
 	return (0);
 }
