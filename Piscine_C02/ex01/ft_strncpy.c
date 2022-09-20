@@ -6,13 +6,13 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 14:45:50 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/19 19:13:06 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/09/20 09:16:31 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	ft_strncpy(char *dest, char *src, unsigned int n)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int	i;
 
@@ -32,21 +32,24 @@ void	ft_strncpy(char *dest, char *src, unsigned int n)
 			i++;
 		}
 	}
+	return (dest);
+
 }
 
 int	main(void)
 {
 	int	size;
-	char	d[1];
+	char	d[15];
+	char	*test;
 	int	i;
 
-	size = 1;
-	ft_strncpy(d, "Hello World!", size);
+	size = 15;
+	test = ft_strncpy(d, "Hello World!", size);
 
 	i = 0;
 	while (i < size)
 	{
-		printf("%c", d[i]);
+		printf("%c", test[i]);
 		i++;
 	}
 	return (0);

@@ -6,32 +6,34 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:15:40 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/19 14:06:53 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/09/20 08:23:43 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	ft_strcpy(char *dest, char *src)
+char	*ft_strcpy(char *dest, char *src)
 {
-	while(*src != '\0')
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
 	{
 		printf("%c\n", *src);
-		*dest = *src;
-		dest++;
-		src++;
-		printf("src : %s, dest : %s\n", src, dest);
+		dest[i] = src[i];
+		i++;
+		printf("src : %c, dest : %c\n", src[i], dest[i]);
 	}
-	*dest = '\0';
+	dest[i] = '\0';
+	return (dest);
 }
 
 int	main(void)
 {
 	char	dest_test[100];
-	char	*src_test;
+	char	*print_test;
 
-	src_test = "Hello World!";
-	ft_strcpy(dest_test, src_test);
-	printf("\n%s", dest_test);
+	print_test = ft_strcpy(dest_test, "Hello World!");
+	printf("\n%s", print_test);
 	return (0);
 }
