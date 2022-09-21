@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:20:35 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/20 09:40:48 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/09/21 18:23:29 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_str_is_alpha(char *str)
 	{
 		if ((*str < 65 || *str > 90) && (*str < 97 || *str > 122))
 		{
-			printf("%c\n", *str);
+			// printf("%c\n", *str);
 			return (0);
 		}
 		str++;
@@ -30,6 +30,6 @@ int	main(void)
 {
 	int	result;
 
-	result = ft_str_is_alpha("Hello654 World");
-	printf("%d\n", result);
+	result = ft_str_is_alpha("HelloWorld");
+	printf("Resultat %d\n", result);
 }

@@ -1,39 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 11:15:40 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/21 18:15:49 by fpannier         ###   ########.fr       */
+/*   Created: 2022/09/21 19:56:55 by fpannier          #+#    #+#             */
+/*   Updated: 2022/09/21 20:08:23 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strncat(char *dest, char *str, unsigned int nb)
 {
-	int	i;
+	int	size_dest;
 
-	i = 0;
-	while (src[i] != '\0')
+	size_dest = 0;
+	while (dest[size_dest] != '\0')
 	{
-		printf("%c\n", src[i]);
-		dest[i] = src[i];
-		i++;
-		printf("src : %c, dest : %c\n", src[i], dest[i]);
+		size_dest++;
 	}
-	dest[i] = '\0';
+	while (nb > 0)
+	{
+		dest[size_dest] = *str;
+		str++;
+		size_dest++;
+		nb--;
+	}
+	dest[size_dest] = '\0';
 	return (dest);
 }
 
 int	main(void)
 {
-	char	dest_test[100];
-	char	*print_test;
+	char	result[] = "Bonsoir ";
 
-	print_test = ft_strcpy(dest_test, "Hello World!");
-	printf("\n%s", print_test);
+	ft_strncat(result, "Ines Gauthier", 4);
+	printf("Resultat : %s", result);
 	return (0);
 }

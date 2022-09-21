@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 17:56:03 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/21 19:53:59 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/09/21 20:01:45 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,3 +41,8 @@ int	main(void)
 	printf("result : %s\n", result);
 	return (0);
 }
+
+
+/*
+	/!\ Dest doit avoir une taille suffisante pour accueillir dest + src 
+*/
