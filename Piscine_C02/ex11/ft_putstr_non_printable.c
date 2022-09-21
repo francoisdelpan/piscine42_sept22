@@ -6,35 +6,43 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 14:41:47 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/21 15:06:13 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/09/21 15:24:00 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
 void	ft_np_to_hex(char c)
 {
-	char	hex[]
+	char	*hex;
+	int	result;
+
+	hex = "0123456789abcdef";
+	write(1, "\\", 1);
+	result = c / 16 + 48;
+	write(1, &result, 1);
+	result = c % 16;
+	write(1, &hex[result], 1);
 }
 
 void	ft_putstr_non_printable(char *str)
 {
-	char	hex[16];
-	char	result;
 	int	i;
 
-	hex = "0123456789abcdef";
 	i = 0;
 	while (str[i] != '\0')
 	{
 		if (str[i] < 32 || str[i] == 127)
-		{	
-				
+		{
+			printf("%c", str[i]);
+			ft_np_to_hex(str[i]);			
 		}
 		else
 		{
-			write(1, &(str[i]), 1)
+			write(1, &(str[i]), 1);
 		}
+		i++;
 	}
 }
 
