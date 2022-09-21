@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 08:28:03 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/21 10:03:04 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/09/21 11:05:40 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strupcase(char *str)
 		if (*str >= 97 && *str <= 122)
 		{
 			printf("%c, ", *str);
-			*str = 48;
+			*str = *str - 32;
 		}
 		str++;
 		i++;
@@ -32,10 +32,9 @@ char	*ft_strupcase(char *str)
 
 int	main(void)
 {
-	char	*test = "Hello World!";
-	char	*result;	
+	char	test[] = "Hello World!";	
 	
-	result = ft_strupcase(test);
-	printf("\n%s\n", result);
+	ft_strupcase(test);
+	printf("\n%s\n", test);
 	return (0);
 }

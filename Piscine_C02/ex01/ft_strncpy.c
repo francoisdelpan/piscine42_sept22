@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 14:45:50 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/20 09:16:31 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/09/21 11:25:15 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,29 @@
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int	i;
+	unsigned int	result;
 
 	i = 0;
-	if (n > (sizeof(src) / sizeof(int)))
+	result = 0;
+	while (src[result] != '\0' )
 	{
-		printf("%d\n", n);
-		while (*src != '\0')
-		{
-			dest[i] = *src;
-			src++;
-			i++;
-		}
-		while (i < n)
-		{
-			dest[i] = 'f';
-			i++;
-		}
+		result++;		
+	}
+	if (n < result)
+	{
+		return (dest);
+	}
+	while (*src != '\0')
+	{
+		dest[i] = *src;
+		src++;
+		i++;
+	}
+	result = i;
+	while (i < n)
+	{
+		dest[i] = 'f';
+		i++;
 	}
 	return (dest);
 
