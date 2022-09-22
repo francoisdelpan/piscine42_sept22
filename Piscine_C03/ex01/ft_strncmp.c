@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 17:41:48 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/21 17:54:52 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/09/22 08:11:02 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 
 int	main(void)
 {
-	int i;
+	int	i;
 
 	i = ft_strncmp("ABA", "ABZ", 8);
 	printf("%d", i);
