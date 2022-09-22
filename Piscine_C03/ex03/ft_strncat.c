@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 19:56:55 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/21 20:08:23 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/09/22 07:48:32 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ char	*ft_strncat(char *dest, char *str, unsigned int nb)
 
 int	main(void)
 {
-	char	result[] = "Bonsoir ";
+	char	result[1500] = "Bonsoir ";
 
-	ft_strncat(result, "Ines Gauthier", 4);
+	ft_strncat(result, "Ines Gauthier", 8);
 	printf("Resultat : %s", result);
 	return (0);
 }
