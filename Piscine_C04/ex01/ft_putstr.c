@@ -1,42 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/21 19:56:55 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/22 09:44:13 by fpannier         ###   ########.fr       */
+/*   Created: 2022/09/22 13:46:03 by fpannier          #+#    #+#             */
+/*   Updated: 2022/09/22 14:07:39 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-char	*ft_strncat(char *dest, char *str, unsigned int nb)
+void	ft_putstr(char *str)
 {
-	int	size_dest;
-
-	size_dest = 0;
-	while (dest[size_dest] != '\0')
+	while (*str != '\0')
 	{
-		size_dest++;
+		write(1, str, 1);
+		STR++;
 	}
-	while (nb > 0 && *str != '\0')
-	{
-		dest[size_dest] = *str;
-		str++;
-		size_dest++;
-		nb--;
-	}
-	dest[size_dest] = '\0';
-	return (dest);
 }
 
-int	main(void)
+int	main(int argc, char *argv)
 {
-	char	result[1500] = "Bonsoir ";
-
-	ft_strncat(result, "Ines Gauthier", 8);
-	printf("Resultat : %s", result);
+	ft_putstr(argv[1]);
 	return (0);
 }

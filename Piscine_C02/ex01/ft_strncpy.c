@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 14:45:50 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/21 11:25:15 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/09/22 12:00:44 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	result = i;
 	while (i < n)
 	{
-		dest[i] = 'f';
+		dest[i] = '\0';
 		i++;
 	}
 	return (dest);

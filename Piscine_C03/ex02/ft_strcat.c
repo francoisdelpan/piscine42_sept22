@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 17:56:03 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/22 08:11:33 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/09/22 09:42:54 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ int	main(void)
 	return (0);
 }
 /*
-	/!\ Dest doit avoir une taille suffisante pour accueillir dest + src 
+	/!\ Dest doit avoir une taille suffisante pour accueillir dest + src
 */
