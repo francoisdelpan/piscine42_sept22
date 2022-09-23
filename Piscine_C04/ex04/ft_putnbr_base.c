@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 10:49:35 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/23 14:30:55 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/09/23 14:54:06 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,38 @@ int	get_base_length(char *b)
 	return (i);
 }
 
+void	itob(unsigned int number, char *base_to_convert)
+{
+	unsigned int	base_length;
+	unsigned int	i;
+	unsigned int	j;
+	char	*reverse_result;
+
+	base_length = get_base_length(base_to_convert);
+	i = 0;
+	j = 0;
+	while (number >= base_length)
+	{
+		reverse_result[i] = base_to_convert[number % 2];
+		number /= 2;
+		i++;
+	}
+	write(1, &base_to_convert[number % 2], 1);
+	while (j < i)
+	{
+		write(1, &reverse_result[i - j], 1);
+		j++;
+	}
+}
+
 void	ft_putnbr_base(int nbr, char *base)
 {
 	unsigned int	number;
 	unsigned int	base_length;
+	char	result[10];
+	int	i;
 
+	i = 0;
 	if (check_error_base(base) == 0)
 	{
 		if (nbr < 0)
@@ -66,13 +93,7 @@ void	ft_putnbr_base(int nbr, char *base)
 		{
 			number = nbr;
 		}
-		base_length = get_base_length(base);
-		while (number >= base_length)
-		{
-			write(1, &base[number % base_length], 1);
-			number /= base_length;
-		}
-		write(1, &base[number], 1);
+		itob(number, base);
 	}
 }
 
