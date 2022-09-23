@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 13:46:03 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/23 08:12:58 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/09/23 08:20:52 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	ft_putstr(char *str)
 int	main(int argc, char *argv[])
 {
 	(void) argc;
-
 	ft_putstr(argv[1]);
 	return (0);
 }
