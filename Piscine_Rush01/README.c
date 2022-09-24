@@ -58,3 +58,23 @@ void	display_board(char **board_to_print)
 		}
 	}
 }
+
+Building 4 sure :
+Si i == 1 || si up + down == board_length + 1 || left + rigth == board_length + 1.
+
+Si player == 4: 1, 2, 3, 4
+
+2> _ _ 4 _ <2
+2> 3 2 4 1 <2
+2> 3 1 4 2 <2
+i2> 2 1 4 3 <2
+
+
+## Fichier :
+
+main.c
+solver.c
+core.c
+first.c
+input.c
+output.c
