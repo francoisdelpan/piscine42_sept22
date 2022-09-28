@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 10:34:35 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/22 11:49:57 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/09/28 22:38:11 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	print_params(char *param)
 
 int	main(int argc, char *argv[])
 {
-	char	*samples[argc- 1];
+	char	*samples[argc - 1];
 	int	i;
 
 	i = 1;

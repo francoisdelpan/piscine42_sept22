@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 12:04:48 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/27 11:38:06 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/09/28 22:33:22 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	is_base_correct(char *base_to_check)
 		if (base_to_check[i] == '+' || base_to_check[i] == '-')
 			return (0);
 		while (base_to_check[j] != '\0')
-		{	
+		{
 			if (base_to_check[j] == base_to_check[i] && j != i)
 				return (0);
 			j++;
@@ -73,11 +73,13 @@ int	ft_atoi_base(char *str, char *base)
 	unsigned int	abs_number;
 	unsigned int	base_length;
 
-	write(1, "in_atoi\n", 8);
 	if (is_base_correct(base))
 	{
-		write(1, "base correct\n", 13);
-		base_length = sizeof(base) / sizeof(char *);
+		base_length = 0;
+		while (base[base_length] != '\0')
+		{
+			base_length++;
+		}
 		write(1, &base_length, 2);
 		number = atoi(str);
 		write(1, &number, 16);
@@ -98,7 +100,6 @@ int	main(int argc, char *argv[])
 {
 	if (argc == 3)
 	{
-		write(1, "argc\n", 5);
 		ft_atoi_base(argv[1], argv[2]);
 	}
 	return (0);
