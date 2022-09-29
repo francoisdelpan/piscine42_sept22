@@ -1,49 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 15:23:04 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/29 20:22:36 by fpannier         ###   ########.fr       */
+/*   Created: 2022/09/29 20:09:21 by fpannier          #+#    #+#             */
+/*   Updated: 2022/09/29 20:36:28 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
-int	*ft_range(int min, int max)
+int	ft_ultimate_range(int **range, int min, int max)
 {
-	int	*tab;
+	int	*result;
 	int	i;
 
-	tab = NULL;
 	if (min >= max)
-		return (tab);
-
-	tab = (int*)malloc(sizeof(int) * (max - min));
-	if (tab == NULL)
-		return (NULL);
+		return (-1);
+	result = (int *)malloc(sizeof(int) * (max - min));
+	if (result == NULL)
+		return (-1);
 	i = 0;
 	while (i < (max - min))
 	{
-		tab[i] = min + i;
+		result[i] = min + i;
 		i++;
 	}
-	return (tab);
+	*range = result;
+	return (i);
 }
+
+#include <stdio.h>
 
 int	main(void)
 {
-	int	i;
-	int	*result;
+	int	*test[1];
 
-	result = ft_range(15, 16);
-	i = 0;
-	while (result[i])
-	{
-		printf("%d\n", result[i]);
-		i++;
-	}
+	printf("%d\n", ft_ultimate_range(test, 15, 20));
 }

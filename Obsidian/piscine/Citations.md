@@ -5,6 +5,14 @@
 Voir le film Pirate of the Silicon Valley
 
 
+# Thais d'Escufon
+"Etre de droite c'est avoir un gout pour l'ordre, la beaute et l'exellence."
+
+# Marine Nationale
+"Honore et Patrie, Valeur et Discipline"
+
+
+
 - - - -
 
 # Metadata

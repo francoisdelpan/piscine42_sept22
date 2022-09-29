@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 08:14:43 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/22 08:55:13 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/09/29 19:10:57 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		length_dest++;
 	}
 	if (length_dest > size)
-	{
-		// Probleme
-		printf("Probleme\n");
-	}
+		return (length_dest + size);
 	while (length_dest < size && src[length_src] != '\0')
 	{
 		dest[length_dest] = src[length_src];
@@ -35,7 +32,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		length_src++;
 	}
 	dest[length_dest] = '\0';
-	return length_dest + 1;
+	return length_dest;
 }
 
 int	main(void)
