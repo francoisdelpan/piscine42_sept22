@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "piscine/Commande de base du Shell.md",
+            "file": "piscine/Oussama Ammar.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "piscine/Commande de base du Shell.md",
+                "file": "piscine/Oussama Ammar.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "piscine/Commande de base du Shell.md",
+                "file": "piscine/Oussama Ammar.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "piscine/Commande de base du Shell.md"
+                "file": "piscine/Oussama Ammar.md"
               }
             }
           }
@@ -130,6 +130,10 @@
   },
   "active": "ee8b0c2386022b38",
   "lastOpenFiles": [
+    "piscine/NPM - malloc.md",
+    "piscine/Permission Shell - chmod.md",
+    "piscine/Commande de base du Shell.md",
+    "piscine/SSH-Keygen.md",
     "piscine/Test.md",
     "templates/Piscine.md"
   ]
