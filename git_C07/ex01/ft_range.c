@@ -1,51 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 11:11:33 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/29 19:32:50 by fpannier         ###   ########.fr       */
+/*   Created: 2022/09/29 15:23:04 by fpannier          #+#    #+#             */
+/*   Updated: 2022/09/29 19:38:44 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-int	ft_strlen(char *str)
+int	*ft_range(int min, int max)
 {
+	int	*tab;
 	int	i;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
+	tab = NULL;
+	if (min > max)
+		return (tab);
 
-char	*ft_strdup(char *src)
-{
-	char	*new;
-	int	i;
-
-	i = 0;
-	new = (char*)malloc(sizeof(char) * ft_strlen(src) + 1);
-	if (new == 0)
+	tab = (int*)malloc(sizeof(int) * (max - min));
+	if (tab == NULL)
 		return (NULL);
-	while (src[i] != '\0')
+	i = 0;
+	while (i < (max - min))
 	{
-		new[i] = src[i];
+		tab[i] = min + i;
 		i++;
 	}
-	new[i] = '\0';
-
-	return (new);
+	return (tab);
 }
 
 int	main(void)
 {
-	printf("%s\n", ft_strdup("Miami Dade"));
-	return (0);
+	int	i;
+	int	*result;
+
+	result = ft_range(15, 22);
+	i = 0;
+	while (result[i])
+	{
+		printf("%d\n", result[i]);
+		i++;
+	}
 }
