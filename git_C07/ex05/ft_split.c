@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:23:32 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/30 01:25:16 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/09/30 09:08:39 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,67 +58,67 @@ int	get_number_of_words(char *str, char *charset)
 	return (nbr_words);
 }
 
-int	add_one(char **dest, int index ,char *str, char *charset)
+int	add_one(char **dest, int result_index, int str_index, char *str, char *charset)
 {
 	int	size_new_word;
 	int	i;
 
 	size_new_word = 0;
-	/*while (str[size_new_word] != '\0'
-		&& !(is_contain_in(str[size_new_word], charset)))
+	while (str[str_index + size_new_word] != '\0'
+		&& is_contain_in(str[str_index + size_new_word], charset) == 0)
 	{
 		size_new_word++;
-	}*/
-	while (str[size_new_word] != '\0')
-	{
-		printf("%c\n", str[size_new_word]);
-		size_new_word++;
-	}		// give up
-	dest[index] = (char *)malloc(sizeof(char) * size_new_word);
-	if (dest[index] == NULL)
+	}
+	printf("Size new word : %d\n", size_new_word);
+	dest[result_index] = (char *)malloc(sizeof(char) * size_new_word);
+	if (dest[result_index] == NULL)
 		return (0);
 	i = 0;
+	printf("str_index: %d\n", str_index);
 	while (i < size_new_word)
 	{
-		printf("str: %c\n", *str);
-		dest[index][i] = *str;
-		str++;
+		printf("str: %c\n", str[str_index]);
+		dest[result_index][i] = str[str_index];
+		str_index++;
 		i++;
 	}
-	while (*str != '\0' || is_contain_in(*str, charset))
+	while (str[str_index] != '\0' && is_contain_in(str[str_index], charset))
 	{
-		str++;
+		str_index++;
 	}
-	return (1);
+	return (str_index);
 }
 
 char	**ft_split(char *str, char *charset)
 {
 	char	**main_result;
 	int	nbr_words;
-	int	i;
+	int	main_result_index;
+	int	str_index;
 
 	nbr_words = get_number_of_words(str, charset);
 	printf("nbr_words: %d\n", nbr_words);
 	main_result = (char **)malloc(sizeof(char *) * (nbr_words + 1));		// +1 parce que termine 0
 	if (main_result == NULL)
 		return (NULL);
-	i = 0;
-	while (i < nbr_words)
+	main_result_index = 0;
+	str_index = 0;
+	while (main_result_index < nbr_words)
 	{
-		printf("i ft_split: %d\n", i);
-		if (!(add_one(main_result, i, str, charset)))
+		printf("i ft_split: %d\n", main_result_index);
+		str_index = add_one(main_result, main_result_index, str_index, str, charset);
+		if (str_index == 0)
 			return (NULL);
-		i++;
+		main_result_index++;
 	}
-	main_result[i] = 0;
+	main_result[main_result_index] = 0;
 	return (main_result);
 }
 
 int	main(void)
 {
 	int	i;
-	char	**test = ft_split("Miamia Dade Police Dept.", " ");
+	char	**test = ft_split("Miami   io   Dade Police   Dept.", " ");
 
 	i = 0;
 	while (test[i] != 0)
