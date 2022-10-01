@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 21:08:25 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/23 21:38:53 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/10/01 15:42:52 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int	ft_iterative_power(int nb, int power)
 	int	result;
 
 	result = nb;
-	if (nb == 0 && power == 0)
-	{
+	if (power == 0)
+		return (1);
+	if (nb == 0)
 		return (0);
-	}
 	while (power > 1)
 	{
 		result *= nb;
@@ -31,6 +31,6 @@ int	ft_iterative_power(int nb, int power)
 
 int	main(void)
 {
-	printf("%d\n", ft_iterative_power(3, 3));
+	printf("%d\n", ft_iterative_power(3, 0));
 	return (0);
 }

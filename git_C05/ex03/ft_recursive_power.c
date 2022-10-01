@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 21:15:32 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/23 21:30:28 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/10/01 16:42:55 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_recursive_power(int nb, int power)
 {
 	if (power == 0)
 	{
-		return (0);
+		return (1);
 	}
 	if (power == 1)
 	{
@@ -27,6 +27,6 @@ int	ft_recursive_power(int nb, int power)
 
 int	main(void)
 {
-	printf("%d\n", ft_recursive_power(3, 3));
+	printf("%d\n", ft_recursive_power(3, 1));
 	return (0);
 }
