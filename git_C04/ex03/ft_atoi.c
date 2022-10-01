@@ -5,78 +5,43 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 08:23:21 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/23 10:38:19 by fpannier         ###   ########.fr       */
+/*   Created: 2022/10/01 10:02:09 by fpannier          #+#    #+#             */
+/*   Updated: 2022/10/01 10:11:44 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	is_correct(char c)
-{
-	if (
-		(c != '\0' && c >= '0' && c <= '9')
-		|| c == '+' || c == '-'
-	)
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
-}
-
-int	ctoi(char *c_to_convert, int c_length, int nbr_minus)
+int	ft_atoi(char *str)
 {
 	int	result;
-	int	i;
+	int	nbr_minus;
 
 	result = 0;
-	i = 0;
-	while (i < c_length)
-	{	
-		result *= 10;
-		result += (c_to_convert[i] - '0');
-		i++;
+	nbr_minus = 0;
+	while (*str && ((*str >= 9 && *str <= 13) || *str == 32))
+	{
+		str++;
+	}
+	while (*str && (*str == '+' || *str == '-'))
+	{
+		if (*str == '-')
+			nbr_minus++;
+		str++;
+	}
+	while (*str && *str >= '0' && *str <= '9')
+	{
+		result = (result * 10) + (*str - '0');
+		str++;
 	}
 	if (nbr_minus % 2 == 1)
-	{
 		return (result * -1);
-	}	
 	return (result);
 }
 
-int	ft_atoi(char *str)
+int	main(int ac, char *av[])
 {
-	char	char_result[10];
-	int		nbr_minus;
-	int		nbr_length;
-
-	nbr_minus = 0;
-	nbr_length = 0;
-	while (is_correct(*str) == 1)
-	{
-		if (*str == '-')
-		{
-			nbr_minus += 1;
-		}
-		if (*str >= '0' && *str <= '9')
-		{
-			char_result[nbr_length] = *str;
-			nbr_length++;
-		}
-		str++;
-	}
-	return (ctoi(char_result, nbr_length, nbr_minus));
-}
-
-int	main(void)
-{
-	char	test[] = "++---+2054878024sdffd45687";
-	int	result;
-
-	result = ft_atoi(test);
-	printf("Char: %s | Int: %d", test, result);
+	(void) ac;
+	printf("%d\n", ft_atoi(av[1]));
 	return (0);
 }

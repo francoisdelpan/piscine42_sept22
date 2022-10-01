@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 10:49:35 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/26 09:44:53 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/10/01 10:21:57 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,12 @@ int	get_base_length(char *b)
 	return (i);
 }
 
-void	itob(unsigned int number, char *base_to_convert, unsigned int base_length)
+void	itob(unsigned int number, char *base_to_convert,
+		unsigned int base_length)
 {
 	if (number >= base_length)
 	{
 		itob(number / base_length, base_to_convert, base_length);
-		//write(1, &base_to_convert[number % base_length], 1);
 	}
 	write(1, &base_to_convert[number % base_length], 1);
 }
@@ -68,23 +68,24 @@ void	ft_putnbr_base(int nbr, char *base)
 	if (check_error_base(base) == 0)
 	{
 		base_length = get_base_length(base);
+		number = nbr;
 		if (nbr < 0)
 		{
 			number = nbr * -1;
 			write(1, "-", 1);
 		}
-		else
-		{
-			number = nbr;
-		}
 		itob(number, base, base_length);
 	}
 }
 
-int	main(void)
+#include <stdio.h>
+#include <stdlib.h>
+int	main(int ac, char **av)
 {
-	ft_putnbr_base(1548, "0123456789ABCDEF");
+	(void)ac;
+	printf("%s\n", av[1]);
+	ft_putnbr_base(atoi(av[1]), "0123456789ABCDEF");
 	write(1, "\n", 1);
-	ft_putnbr_base(1548, "01");
+	ft_putnbr_base(atoi(av[1]), "01");
 	return (0);
 }

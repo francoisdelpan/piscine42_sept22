@@ -6,11 +6,17 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 12:04:48 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/28 22:33:22 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/10/01 10:39:03 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+
+
+
+
+#include <stdio.h>
 
 int	is_base_correct(char *base_to_check)
 {
@@ -40,17 +46,24 @@ int	is_base_correct(char *base_to_check)
 
 int	atoi(char *str)
 {
-	unsigned int	nbr_minus;
+	int	nbr_minus;
 	int	result;
 
-	while ((*str != '\0' && *str >= '0' && *str <= '9')
-		|| *str == '+' || *str == '-')
+	nbr_minus = 0;
+	result = 0;
+	while (*str && ((*str >= 9 && *str <= 13) || *str == 32))
 	{
-		write(1, str, 1);
+		str++;
+	}
+	while (*str && (*str == '+' || *str == '-'))
+	{
 		if (*str == '-')
-			nbr_minus += 1;
-		else if (*str >= '0' && *str <= '9')
-			result = (result * 10) + (*str - '0');
+			nbr_minus++;
+		str++;
+	}
+	while (*str && *str >= '0' && *str <= '9')
+	{
+		result = (result * 10) + (*str - '0');
 		str++;
 	}
 	if (nbr_minus % 2 == 1)
@@ -69,9 +82,9 @@ void	itob(unsigned int number, char *ref_base, unsigned int base_length)
 
 int	ft_atoi_base(char *str, char *base)
 {
-	int	number;
 	unsigned int	abs_number;
 	unsigned int	base_length;
+	int				number;
 
 	if (is_base_correct(base))
 	{
@@ -80,9 +93,9 @@ int	ft_atoi_base(char *str, char *base)
 		{
 			base_length++;
 		}
-		write(1, &base_length, 2);
+		printf("base_length: %d\n", base_length);
 		number = atoi(str);
-		write(1, &number, 16);
+		printf("number: %d\n", number);
 		if (number < 0)
 		{
 			abs_number = number * -1;
