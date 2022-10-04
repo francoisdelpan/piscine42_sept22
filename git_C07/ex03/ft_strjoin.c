@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 20:37:18 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/29 23:22:46 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/10/04 15:38:50 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,6 @@ int	main(void)
 {
 	char	*test[3] = {"Police", "Salut babe", "Ici c'est Paris"};
 
-	printf("%s\n", ft_strjoin(0, test, ":"));
+	printf("%s\n", ft_strjoin(3, test, ""));
 	return (0);
 }
