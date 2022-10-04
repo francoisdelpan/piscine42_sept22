@@ -6,12 +6,14 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:12:46 by fpannier          #+#    #+#             */
-/*   Updated: 2022/10/04 20:02:32 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/10/04 20:28:25 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
+
+#include <stdio.h>
 
 int	is_base_correct(char *base)
 {
@@ -46,6 +48,7 @@ int	ft_strlen(char *str)
 
 int	ft_pow(int nb, int power)
 {
+	printf("Power : %d\n", power);
 	if (power < 0)
 		return (0);
 	if (power == 0)
@@ -68,14 +71,13 @@ int	base_to_int(char *nbr, char *base)
 	{
 		while (base[int_eq_base] != nbr[i])
 			int_eq_base++;
-		result += int_eq_base * ft_pow(base_len, base_len - i);
+		printf("pow : %d\n", ft_pow(base_len, ft_strlen(nbr) - i - 1));
+		result += int_eq_base * ft_pow(base_len, ft_strlen(nbr) - i - 1);
 		int_eq_base = 0;
 		i++;
 	}
-	return (i);
+	return (result);
 }
-
-#include <stdio.h>
 
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
