@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:23:32 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/30 09:08:39 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/10/04 11:09:15 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ char	**ft_split(char *str, char *charset)
 int	main(void)
 {
 	int	i;
-	char	**test = ft_split("Miami   io   Dade Police   Dept.", " ");
+	char	**test = ft_split("Miami y  io   Dade Police   Dept.", " ym ");
 
 	i = 0;
 	while (test[i] != 0)

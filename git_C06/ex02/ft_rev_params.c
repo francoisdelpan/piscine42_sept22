@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 10:17:17 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/22 10:33:38 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/10/03 00:12:25 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	print_params(char *param)
 {
-	while (*param != '\0')
+	while (*param)
 	{
 		write(1, param, 1);
 		param++;

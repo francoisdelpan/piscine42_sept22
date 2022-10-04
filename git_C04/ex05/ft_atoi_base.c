@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 12:04:48 by fpannier          #+#    #+#             */
-/*   Updated: 2022/10/01 10:39:03 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/10/02 21:26:50 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ int	is_base_correct(char *base_to_check)
 	j = 0;
 	while (base_to_check[i] != '\0')
 	{
-		if (base_to_check[i] == '+' || base_to_check[i] == '-')
+		if (base_to_check[i] == '+' || base_to_check[i] == '-'
+			|| base_to_check[i] <= 32 || base_to_check[i] == 127)
 			return (0);
 		while (base_to_check[j] != '\0')
 		{
@@ -112,8 +113,6 @@ int	ft_atoi_base(char *str, char *base)
 int	main(int argc, char *argv[])
 {
 	if (argc == 3)
-	{
 		ft_atoi_base(argv[1], argv[2]);
-	}
 	return (0);
 }

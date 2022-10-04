@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 10:34:35 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/28 22:38:11 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/10/04 12:51:47 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	sort_params(char **params, int size)
 	int	i;
 	int	j;
 	int	c;
-	char 	*temp;
+	char 		*temp;
 
 	i = 0;
 	j = 0;
@@ -26,27 +26,26 @@ void	sort_params(char **params, int size)
 	{
 		while (j < size - 1)
 		{
-			while(params[j][c] != '\0' && params[j + 1][c] != '\0' && params[j][c] == params[j + 1][c])
-			{
+			while (params[j][c] != '\0' && params[j + 1][c] != '\0'
+				&& params[j][c] == params[j + 1][c])
 				c++;
-			}
 			if (params[j][c] > params[j + 1][c])
 			{
 				temp = params[j];
 				params[j] = params[j + 1];
-				params[j + 1] = temp;	
+				params[j + 1] = temp;
 			}
 			j++;
 			c = 0;
 		}
 		i++;
-		j = 0;	
+		j = 0;
 	}
 }
 
 void	print_params(char *param)
 {
-	while (*param != '\0')
+	while (*param)
 	{
 		write(1, param, 1);
 		param++;

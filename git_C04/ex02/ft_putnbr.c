@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 08:14:09 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/23 08:19:59 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/10/02 21:15:11 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_putnbr(int nb)
 	if (nb < 0)
 	{
 		number = nb * -1;
+		write(1, "-", 1);
 	}
 	else
 	{
@@ -37,7 +38,7 @@ void	ft_putnbr(int nb)
 	else
 	{
 		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		ft_putchar(nb % 10);
 	}
 }
 

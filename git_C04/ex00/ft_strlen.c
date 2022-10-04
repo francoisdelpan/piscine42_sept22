@@ -6,13 +6,11 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 12:47:44 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/30 23:01:32 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/10/02 21:09:09 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-void	ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 
