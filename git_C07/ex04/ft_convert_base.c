@@ -6,7 +6,7 @@
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:12:46 by fpannier          #+#    #+#             */
-/*   Updated: 2022/10/04 20:28:25 by fpannier         ###   ########.fr       */
+/*   Updated: 2022/10/04 23:41:06 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,19 +59,21 @@ int	ft_pow(int nb, int power)
 int	base_to_int(char *nbr, char *base)
 {
 	int	base_len;
+	int	nbr_len;
 	int	i;
 	int	int_eq_base;
 	int	result;
 
 	base_len = ft_strlen(base);
+	nbr_len = ft_strlen(nbr);
 	result = 0;
 	int_eq_base = 0;
 	i = 0;
 	while (nbr[i])
 	{
-		while (base[int_eq_base] != nbr[i])
+		while (base[int_eq_base] != nbr[nbr_len - i - 1])
 			int_eq_base++;
-		printf("pow : %d\n", ft_pow(base_len, ft_strlen(nbr) - i - 1));
+		printf("pow : %d\n", ft_pow(base_len, nbr_len - i - 1));
 		result += int_eq_base * ft_pow(base_len, ft_strlen(nbr) - i - 1);
 		int_eq_base = 0;
 		i++;
