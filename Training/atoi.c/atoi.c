@@ -5,40 +5,45 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpannier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 11:52:13 by fpannier          #+#    #+#             */
-/*   Updated: 2022/09/30 13:51:41 by fpannier         ###   ########.fr       */
+/*   Created: 2022/10/06 18:43:43 by fpannier          #+#    #+#             */
+/*   Updated: 2022/10/06 18:51:51 by fpannier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include <stdio.h>
 
 int	ft_atoi(char *str)
 {
-	int	nbr_minus;
+	int	nbr_count;
+	int	i;
 	int	result;
 
-	nbr_minus = 0;
+	nbr_count = 0;
 	result = 0;
-	while (*str && ((*str >= 9 && *str <= 13) || *str == 32 || *str == '-' || *str == '+'))
+	i = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	while (str[i] == '+' || str[i] == '-')
 	{
-		if (*str == '-')
-			nbr_minus += 1;
-		str++;
+		if (str[i] == '-')
+			nbr_count++;
+		i++;
 	}
-	while (*str >= '0' && *str <= '9')
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
-		result = result * 10 + (*str - 48);
-		str++;
+		result = (result * 10) + (str[i] - '0');
+		i++;
 	}
-	if (nbr_minus % 2 == 1)
+	if (nbr_count % 2 == 1)
 		return (result * -1);
 	return (result);
+
 }
 
-#include <stdio.h>
-
-int	main(void)
+int	main(int ac, char **av)
 {
-	printf("%d\n", ft_atoi("    --++-1548fdal54698545313fddf"));
+	(void) ac;
+	printf("%d\n", ft_atoi(av[1]));
 	return (0);
 }
